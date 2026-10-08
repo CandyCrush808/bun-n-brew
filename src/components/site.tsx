@@ -33,13 +33,13 @@ export function Header() {
           <Link to="/" className={navLink} activeProps={{ className: `${navLink} text-foreground` }}>
             Home
           </Link>
-          <Link to="/menu" className={navLink} activeProps={{ className: "text-foreground" }}>
+          <Link to="/menu" className={navLink} activeProps={{ className: `${navLink} text-foreground` }}>
             Menu
           </Link>
-          <Link to="/visit" className={navLink} activeProps={{ className: "text-foreground" }}>
+          <Link to="/visit" className={navLink} activeProps={{ className: `${navLink} text-foreground` }}>
             Visit
           </Link>
-          <Link to="/instagram" className={navLink} activeProps={{ className: "text-foreground" }}>
+          <Link to="/instagram" className={navLink} activeProps={{ className: `${navLink} text-foreground` }}>
             Instagram
           </Link>
           <a
@@ -136,9 +136,7 @@ export function Footer() {
               <Link to="/" className="text-muted-foreground hover:text-foreground">Home</Link>
               <Link to="/menu" className="text-muted-foreground hover:text-foreground">Menu</Link>
               <Link to="/visit" className="text-muted-foreground hover:text-foreground">Visit</Link>
-              <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-foreground">
-                Instagram
-              </a>
+              <Link to="/instagram" className="text-muted-foreground hover:text-foreground">Instagram</Link>
             </div>
           </div>
 
