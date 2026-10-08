@@ -89,13 +89,14 @@ function Menu() {
 
             <div className="p-7 md:p-10">
               <h2 className="text-4xl font-bold md:text-5xl">{group.title}</h2>
-              <ul className="mt-6 divide-y divide-border">
-                {group.items.map((item) => (
-                  <li key={item} className="flex items-center justify-between gap-4 py-5">
-                    <span className="font-display text-xl font-semibold md:text-2xl">{item}</span>
-                  </li>
+              <div className="mt-6 grid gap-3">
+                {group.items.map((item, itemIndex) => (
+                  <div key={item} className="group/item flex items-center gap-4 rounded-2xl border border-border bg-background/40 px-4 py-4 transition-colors hover:border-primary/50 hover:bg-primary/5">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground">0{itemIndex + 1}</span>
+                    <span className="font-display text-lg font-semibold md:text-xl">{item}</span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </article>
         ))}
