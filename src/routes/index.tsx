@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Quote, Star } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import coffees from "@/assets/coffees.jpg";
 import bread from "@/assets/garlic-bread.jpg";
@@ -72,7 +73,7 @@ function Index() {
             ["Burgers", "Loaded and made for proper hunger.", hero],
             ["Quick bites", "Cheesy things for the table.", bread],
           ].map(([title, copy, image], i) => (
-            <Link to="/menu" key={title as string} className="group relative min-h-[360px] overflow-hidden rounded-[2rem] border border-border">
+            <Link to="/menu" key={title as string} className="group relative min-h-[360px] overflow-hidden rounded-[2rem] border border-border transition duration-300 hover:-translate-y-1 hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
               <img src={image as string} alt={title as string} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
               <div className="absolute bottom-0 p-7 text-white">
@@ -144,7 +145,7 @@ function Index() {
             <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="mt-8 inline-block rounded-full bg-primary-foreground px-5 py-3 text-sm font-bold text-primary">Follow on Instagram →</a>
           </div>
           <div className="grid grid-cols-2 gap-4 md:col-span-7">
-            {[coffees, hero, bread, coffees].map((image, i) => <img key={i} src={image} alt="Bun n Brew café moment" loading="lazy" className="aspect-square w-full rounded-[1.5rem] object-cover" />)}
+            {[coffees, hero, bread, coffees].map((image, i) => <img key={i} src={image} alt={["Cold coffee", "Loaded burger", "Cheese garlic bread", "Bun n Brew café food"][i]} loading="lazy" className={`aspect-square w-full rounded-[1.5rem] object-cover ${i === 1 ? "object-[center_65%]" : i === 2 ? "object-[center_35%]" : ""}`} />)}
           </div>
         </div>
       </section>
@@ -156,8 +157,14 @@ function Index() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {reviews.map((r) => (
               <figure key={r.name} className="rounded-[2rem] border border-secondary-foreground/15 p-8 transition-transform hover:-translate-y-1">
-                <blockquote className="font-serif text-2xl leading-snug">“{r.text}”</blockquote>
-                <figcaption className="mt-4 text-sm opacity-70">— {r.name}, Google review</figcaption>
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex gap-1" aria-label="5 star review">
+                    {Array.from({ length: 5 }).map((_, index) => <Star key={index} size={14} fill="currentColor" aria-hidden="true" />)}
+                  </div>
+                  <Quote size={24} className="opacity-25" aria-hidden="true" />
+                </div>
+                <blockquote className="mt-5 font-serif text-2xl leading-snug">“{r.text}”</blockquote>
+                <figcaption className="mt-5 text-xs font-bold uppercase tracking-[0.15em] opacity-60">{r.name} · Google review</figcaption>
               </figure>
             ))}
           </div>
