@@ -66,13 +66,13 @@ export function Header() {
         <nav
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="border-t border-border px-5 py-4 md:hidden"
+          className="border-t border-border bg-background/95 px-5 py-4 shadow-lg shadow-black/5 backdrop-blur-xl md:hidden"
         >
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
             <Link
               to="/"
               onClick={closeMenu}
-              className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted"
+              className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               activeProps={{ className: "rounded-2xl bg-muted px-4 py-3 font-semibold text-primary" }}
             >
               Home
@@ -104,7 +104,7 @@ export function Header() {
             <a
               href={`tel:${PHONE}`}
               onClick={closeMenu}
-              className="mt-2 rounded-full bg-primary px-5 py-3 text-center font-semibold text-primary-foreground"
+              className="mt-2 rounded-full bg-primary px-5 py-3 text-center font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               Call {PHONE_DISPLAY}
             </a>
