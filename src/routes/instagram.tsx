@@ -38,7 +38,7 @@ const reels = [
 
 function InstagramPage() {
   return (
-    <main className="overflow-hidden bg-secondary text-secondary-foreground">
+    <div className="overflow-hidden bg-secondary text-secondary-foreground">
       <section className="relative mx-auto max-w-7xl px-5 pb-12 pt-20 md:pb-20 md:pt-28">
         <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
@@ -58,8 +58,8 @@ function InstagramPage() {
           </div>
           <div className="grid grid-cols-3 gap-3 border-t border-secondary-foreground/15 pt-5 text-center lg:min-w-[360px]">
             <div><p className="text-2xl font-extrabold">25+</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Favourites</p></div>
-            <div><p className="text-2xl font-extrabold">Daily</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Fresh brews</p></div>
-            <div><p className="text-2xl font-extrabold">Nigdi</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Our spot</p></div>
+            <div><p className="text-2xl font-extrabold">Daily</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Open 11am–10pm</p></div>
+            <div><p className="text-2xl font-extrabold">Nigdi</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Our café</p></div>
           </div>
         </div>
       </section>
@@ -88,7 +88,7 @@ function InstagramPage() {
         <div className="absolute right-[12%] top-40 hidden size-16 rotate-12 border-2 border-primary/40 md:block" />
         <div className="grid gap-12 md:grid-cols-3 md:grid-rows-2 md:gap-x-10 md:gap-y-2">
           {posts.map((post, index) => (
-            <a key={post.title + index} href={INSTAGRAM} target="_blank" rel="noreferrer" aria-label={`Open Instagram — ${post.title}`} className={`group relative block ${post.position} ${post.rotate} transition duration-500 hover:z-20 hover:rotate-0 hover:scale-105`}>
+            <a key={post.title + index} href={INSTAGRAM} target="_blank" rel="noreferrer" aria-label={`Open Bun n Brew on Instagram — ${post.title}`} className={`group relative block ${post.position} ${post.rotate} transition duration-500 hover:z-20 hover:rotate-0 hover:scale-105`}>
               <div className="absolute -top-4 left-1/2 z-10 h-10 w-20 -translate-x-1/2 rotate-[-4deg] bg-primary/70 shadow-sm backdrop-blur-sm" />
               <div className="bg-[#f5efe5] p-3 pb-7 shadow-[0_18px_35px_rgba(0,0,0,0.18)] md:p-4 md:pb-8">
                 <div className="relative overflow-hidden bg-black">
@@ -144,7 +144,7 @@ function InstagramPage() {
       <section className="bg-secondary/70 px-5 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-end justify-between">
-            <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Reels / videos</p><h2 className="mt-3 text-4xl font-extrabold md:text-6xl">Watch the <span className="font-serif font-normal italic text-primary">mood.</span></h2></div>
+            <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Instagram moments</p><h2 className="mt-3 text-4xl font-extrabold md:text-6xl">See the <span className="font-serif font-normal italic text-primary">mood.</span></h2></div>
             <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="hidden text-xs font-bold uppercase tracking-[0.15em] opacity-60 md:block">Watch on Instagram ↗</a>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -153,7 +153,7 @@ function InstagramPage() {
                 <img src={reel.image} alt={reel.title} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
                 <span className="absolute left-5 top-5 inline-flex size-11 items-center justify-center rounded-full bg-white text-black"><Play size={15} fill="currentColor" /></span>
-                <div className="absolute bottom-5 left-5 right-5 text-white"><p className="text-xl font-bold">{reel.title}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-[0.15em] opacity-65">{reel.time} · Watch on Instagram</p></div>
+                <div className="absolute bottom-5 left-5 right-5 text-white"><p className="text-xl font-bold">{reel.title}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-[0.15em] opacity-65">Open on Instagram</p></div>
               </a>
             ))}
           </div>
