@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
 import coffees from "@/assets/coffees.jpg";
 import bread from "@/assets/garlic-bread.jpg";
-import { MAPS, PHONE } from "@/components/site";
+import { INSTAGRAM as INSTAGRAM_URL, MAPS, PHONE } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
