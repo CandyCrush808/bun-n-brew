@@ -40,8 +40,7 @@ export function Header() {
             Visit
           </Link>
           <a
-            href={INSTAGRAM}
-            target="_blank"
+            href="/instagram"
             rel="noreferrer"
             className={navLink}
           >
@@ -99,8 +98,7 @@ export function Header() {
               Visit
             </Link>
             <a
-              href={INSTAGRAM}
-              target="_blank"
+              href="/instagram"
               rel="noreferrer"
               onClick={closeMenu}
               className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted"
