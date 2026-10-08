@@ -24,73 +24,164 @@ const posts = [
   { image: bread, title: "Something extra", note: "Made for sharing", rotate: "rotate-2", position: "md:col-start-3 md:row-start-2 md:mt-14" },
 ];
 
+const cravings = [
+  { image: coffees, name: "Thick Cold Coffee", tag: "The classic" },
+  { image: hero, name: "Special Chicken Burger", tag: "The hungry one" },
+  { image: bread, name: "Cheese Garlic Bread", tag: "The shareable one" },
+];
+
+const reels = [
+  { image: hero, title: "Burger drop", time: "0:18" },
+  { image: coffees, title: "Cold coffee pour", time: "0:12" },
+  { image: bread, title: "Cheesy pull", time: "0:15" },
+];
+
 function InstagramPage() {
   return (
     <main className="overflow-hidden bg-secondary text-secondary-foreground">
-      <section className="relative mx-auto max-w-7xl px-5 pb-10 pt-20 md:pb-16 md:pt-28">
-        <div className="relative z-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/15 bg-secondary-foreground/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em]">
-            <InstagramIcon size={15} />
-            @bun_n_brewcafe
+      <section className="relative mx-auto max-w-7xl px-5 pb-12 pt-20 md:pb-20 md:pt-28">
+        <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-secondary-foreground/15 bg-secondary-foreground/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em]">
+              <InstagramIcon size={15} /> @bun_n_brewcafe
+            </div>
+            <h1 className="mt-7 text-6xl font-extrabold leading-[0.82] tracking-[-0.05em] md:text-8xl">
+              Little moments.<br />
+              <span className="font-serif font-normal italic text-primary">Big cravings.</span>
+            </h1>
+            <p className="mt-6 max-w-xl text-base leading-7 text-secondary-foreground/65">
+              Coffee breaks, loaded buns and little café moments — collected like a scrapbook.
+            </p>
+            <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground transition hover:-translate-y-0.5">
+              Follow on Instagram <ArrowUpRight size={17} />
+            </a>
           </div>
-          <h1 className="mt-7 text-6xl font-extrabold leading-[0.82] tracking-[-0.05em] md:text-8xl">
-            Little moments.<br />
-            <span className="font-serif font-normal italic text-primary">Big cravings.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-secondary-foreground/65">
-            A scrapbook of coffee breaks, loaded buns and the little café moments that make Bun n Brew feel like your place.
-          </p>
-          <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-bold text-primary-foreground transition hover:-translate-y-0.5">
-            Open Instagram <ArrowUpRight size={17} />
-          </a>
+          <div className="grid grid-cols-3 gap-3 border-t border-secondary-foreground/15 pt-5 text-center lg:min-w-[360px]">
+            <div><p className="text-2xl font-extrabold">25+</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Favourites</p></div>
+            <div><p className="text-2xl font-extrabold">Daily</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Fresh brews</p></div>
+            <div><p className="text-2xl font-extrabold">Nigdi</p><p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Our spot</p></div>
+          </div>
         </div>
-        <div className="pointer-events-none absolute -right-12 top-12 hidden size-36 rotate-12 rounded-full border-[3px] border-secondary-foreground/20 md:block" />
-        <div className="pointer-events-none absolute right-24 top-28 hidden h-1 w-32 -rotate-12 bg-primary/50 md:block" />
       </section>
 
-      <section className="relative mx-auto max-w-7xl px-5 pb-28 md:pb-40">
-        <div className="absolute left-[8%] top-10 hidden h-px w-44 -rotate-12 bg-secondary-foreground/20 md:block" />
-        <div className="absolute right-[12%] top-32 hidden size-16 rotate-12 border-2 border-primary/40 md:block" />
+      <section className="mx-auto max-w-7xl px-5 pb-12">
+        <div className="grid gap-3 md:grid-cols-3">
+          {[
+            ["01", "Start here", "Coffee, buns & the Bun n Brew vibe", "/menu"],
+            ["02", "Most loved", "The things worth ordering first", "/menu"],
+            ["03", "Find us", "Come say hello in Nigdi", "/visit"],
+          ].map(([number, title, copy, href]) => (
+            <Link key={number} to={href as "/menu" | "/visit"} className="group rounded-[1.5rem] border border-secondary-foreground/10 bg-secondary-foreground/5 p-6 transition hover:-translate-y-1 hover:bg-secondary-foreground/10">
+              <div className="flex items-start justify-between"><span className="text-xs font-bold text-primary">{number}</span><ArrowUpRight size={17} className="opacity-40 transition group-hover:translate-x-1 group-hover:-translate-y-1" /></div>
+              <h2 className="mt-7 text-2xl font-bold">{title}</h2><p className="mt-2 text-sm opacity-55">{copy}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="relative mx-auto max-w-7xl px-5 pb-28 md:pb-36">
+        <div className="mb-10 flex items-end justify-between gap-6">
+          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Pinned moments</p><h2 className="mt-3 text-4xl font-extrabold md:text-6xl">Our little <span className="font-serif font-normal italic text-primary">scrapbook.</span></h2></div>
+          <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="hidden text-xs font-bold uppercase tracking-[0.15em] opacity-60 hover:opacity-100 md:block">View feed ↗</a>
+        </div>
+        <div className="absolute left-[8%] top-24 hidden h-px w-44 -rotate-12 bg-secondary-foreground/20 md:block" />
+        <div className="absolute right-[12%] top-40 hidden size-16 rotate-12 border-2 border-primary/40 md:block" />
         <div className="grid gap-12 md:grid-cols-3 md:grid-rows-2 md:gap-x-10 md:gap-y-2">
           {posts.map((post, index) => (
-            <a
-              key={post.title + index}
-              href={INSTAGRAM}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open Bun n Brew Instagram — ${post.title}`}
-              className={`group relative block ${post.position} ${post.rotate} transition duration-500 hover:z-20 hover:rotate-0 hover:scale-105`}
-            >
+            <a key={post.title + index} href={INSTAGRAM} target="_blank" rel="noreferrer" aria-label={`Open Instagram — ${post.title}`} className={`group relative block ${post.position} ${post.rotate} transition duration-500 hover:z-20 hover:rotate-0 hover:scale-105`}>
               <div className="absolute -top-4 left-1/2 z-10 h-10 w-20 -translate-x-1/2 rotate-[-4deg] bg-primary/70 shadow-sm backdrop-blur-sm" />
               <div className="bg-[#f5efe5] p-3 pb-7 shadow-[0_18px_35px_rgba(0,0,0,0.18)] md:p-4 md:pb-8">
                 <div className="relative overflow-hidden bg-black">
                   <img src={post.image} alt={post.title} loading="lazy" className="aspect-[4/4.6] w-full object-cover transition duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                   <span className="absolute bottom-3 right-3 rounded-full bg-black/65 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.15em] text-white backdrop-blur">View post ↗</span>
                 </div>
-                <div className="px-2 pt-4 text-[#27231e]">
-                  <p className="font-serif text-2xl italic">{post.title}</p>
-                  <p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] opacity-45">{post.note}</p>
-                </div>
+                <div className="px-2 pt-4 text-[#27231e]"><p className="font-serif text-2xl italic">{post.title}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] opacity-45">{post.note}</p></div>
               </div>
             </a>
           ))}
         </div>
-        <div className="mx-auto mt-20 max-w-xl rotate-[-1deg] border-y-2 border-secondary-foreground/15 py-6 text-center md:mt-10">
+        <div className="mx-auto mt-20 max-w-xl rotate-[-1deg] border-y-2 border-secondary-foreground/15 py-6 text-center">
           <p className="font-serif text-3xl italic md:text-4xl">“Coffee. Buns. Good times.”</p>
           <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Bun n Brew · Nigdi</p>
         </div>
       </section>
 
-      <section className="bg-background px-5 py-20 text-center md:py-28">
+      <section className="bg-background px-5 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">What's on the table</p><h2 className="mt-3 text-5xl font-extrabold leading-[0.9] md:text-7xl">What we're <span className="font-serif font-normal italic text-primary">craving.</span></h2></div>
+            <Link to="/menu" className="text-xs font-bold uppercase tracking-[0.15em] text-primary">See full menu →</Link>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {cravings.map((item, index) => (
+              <Link key={item.name} to="/menu" className={`group ${index === 1 ? "md:translate-y-8" : ""}`}>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border bg-card">
+                  <img src={item.image} alt={item.name} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] backdrop-blur">{item.tag}</span>
+                </div>
+                <h3 className="mt-5 text-2xl font-bold">{item.name}</h3><p className="mt-1 text-sm text-muted-foreground">Tap to explore the menu →</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="rounded-[2rem] bg-primary p-8 text-primary-foreground md:p-10">
+            <p className="text-xs font-bold uppercase tracking-[0.2em]">Behind the bun</p>
+            <h2 className="mt-5 text-5xl font-extrabold leading-[0.88] md:text-6xl">Made to be <span className="font-serif font-normal italic">shared.</span></h2>
+            <p className="mt-6 text-sm leading-7 opacity-75">The pour. The grill. The first bite. The little things that never make it onto the menu.</p>
+            <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary-foreground px-5 py-3 text-sm font-bold text-primary">See more moments <ArrowUpRight size={16} /></a>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <img src={coffees} alt="Coffee being served" loading="lazy" className="aspect-[4/5] w-full rounded-[1.5rem] object-cover" />
+            <img src={bread} alt="Garlic bread ready to share" loading="lazy" className="mt-10 aspect-[4/5] w-full rounded-[1.5rem] object-cover" />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-secondary/70 px-5 py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-end justify-between">
+            <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Reels / videos</p><h2 className="mt-3 text-4xl font-extrabold md:text-6xl">Watch the <span className="font-serif font-normal italic text-primary">mood.</span></h2></div>
+            <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="hidden text-xs font-bold uppercase tracking-[0.15em] opacity-60 md:block">Watch on Instagram ↗</a>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {reels.map((reel) => (
+              <a key={reel.title} href={INSTAGRAM} target="_blank" rel="noreferrer" className="group relative overflow-hidden rounded-[2rem]">
+                <img src={reel.image} alt={reel.title} loading="lazy" className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                <span className="absolute left-5 top-5 inline-flex size-11 items-center justify-center rounded-full bg-white text-black"><Play size={15} fill="currentColor" /></span>
+                <div className="absolute bottom-5 left-5 right-5 text-white"><p className="text-xl font-bold">{reel.title}</p><p className="mt-1 text-[10px] font-bold uppercase tracking-[0.15em] opacity-65">{reel.time} · Watch on Instagram</p></div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-card p-8 md:p-14">
+          <div className="absolute -right-16 -top-16 size-44 rounded-full border-[3px] border-primary/20" />
+          <div className="absolute right-20 top-20 size-4 rotate-45 bg-primary/60" />
+          <div className="max-w-xl"><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Bun n Brew moodboard</p><h2 className="mt-4 text-5xl font-extrabold leading-[0.9] md:text-7xl">Coffee.<br /><span className="font-serif font-normal italic text-primary">Buns.</span><br />Good times.</h2></div>
+          <div className="mt-12 grid gap-5 md:grid-cols-4">
+            {["slow mornings", "one more bite", "coffee first", "meet me here"].map((word, i) => (
+              <div key={word} className={`flex min-h-36 items-center justify-center rounded-[1.5rem] border border-border p-5 text-center ${i % 2 ? "rotate-2 bg-secondary text-secondary-foreground" : "-rotate-2 bg-background"}`}><span className="font-serif text-2xl italic">{word}</span></div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground">
+            <span className="rounded-full border border-border px-4 py-2">Coffee</span><span className="rounded-full border border-border px-4 py-2">Burgers</span><span className="rounded-full border border-border px-4 py-2">Nigdi</span><span className="rounded-full border border-border px-4 py-2">Good times</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background px-5 py-24 text-center md:py-32">
         <InstagramIcon className="mx-auto text-primary" size={30} />
-        <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-primary">More on Instagram</p>
-        <h2 className="mx-auto mt-3 max-w-2xl text-5xl font-extrabold leading-[0.9] md:text-7xl">
-          The real feed is <span className="font-serif font-normal italic text-primary">waiting.</span>
-        </h2>
-        <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-bold text-primary-foreground">
-          Visit @bun_n_brewcafe <ArrowUpRight size={17} />
-        </a>
+        <p className="mt-5 text-xs font-bold uppercase tracking-[0.2em] text-primary">The real feed is waiting</p>
+        <h2 className="mx-auto mt-3 max-w-3xl text-5xl font-extrabold leading-[0.9] md:text-7xl">See what we're <span className="font-serif font-normal italic text-primary">up to.</span></h2>
+        <p className="mx-auto mt-5 max-w-md text-sm leading-6 text-muted-foreground">New food, café moments and whatever is brewing next.</p>
+        <a href={INSTAGRAM} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 font-bold text-primary-foreground">Visit @bun_n_brewcafe <ArrowUpRight size={17} /></a>
       </section>
     </main>
   );
