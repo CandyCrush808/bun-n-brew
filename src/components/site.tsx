@@ -39,13 +39,9 @@ export function Header() {
           <Link to="/visit" className={navLink} activeProps={{ className: "text-foreground" }}>
             Visit
           </Link>
-          <a
-            href="/instagram"
-            rel="noreferrer"
-            className={navLink}
-          >
+          <Link to="/instagram" className={navLink} activeProps={{ className: "text-foreground" }}>
             Instagram
-          </a>
+          </Link>
           <a
             href={`tel:${PHONE}`}
             className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -97,14 +93,14 @@ export function Header() {
             >
               Visit
             </Link>
-            <a
-              href="/instagram"
-              rel="noreferrer"
+            <Link
+              to="/instagram"
               onClick={closeMenu}
               className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted"
+              activeProps={{ className: "rounded-2xl bg-muted px-4 py-3 font-semibold text-primary" }}
             >
               Instagram
-            </a>
+            </Link>
             <a
               href={`tel:${PHONE}`}
               onClick={closeMenu}
