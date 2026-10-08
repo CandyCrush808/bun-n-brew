@@ -3,6 +3,7 @@ import { ArrowUpRight, Instagram as InstagramIcon, Play } from "lucide-react";
 import coffees from "@/assets/coffees.jpg";
 import hero from "@/assets/hero.jpg";
 import bread from "@/assets/garlic-bread.jpg";
+import instagramLogo from "@/assets/instagramlogo.jpg";
 import { INSTAGRAM } from "@/components/site";
 
 export const Route = createFileRoute("/instagram")({
@@ -76,18 +77,28 @@ function InstagramPage() {
             </a>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 border-t border-secondary-foreground/15 pt-5 text-center lg:min-w-[360px]">
-            <div>
-              <p className="text-2xl font-extrabold">Fresh</p>
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Coffee & bites</p>
+          <div className="flex flex-col items-center gap-5 lg:min-w-[360px]">
+            <div className="w-full max-w-[360px] overflow-hidden rounded-[2rem] border border-secondary-foreground/10 bg-secondary-foreground/5 p-2 shadow-[0_18px_45px_rgba(0,0,0,0.12)]">
+              <img
+                src={instagramLogo}
+                alt="Bun n Brew café logo"
+                className="aspect-square w-full rounded-[1.5rem] object-cover"
+              />
             </div>
-            <div>
-              <p className="text-2xl font-extrabold">Daily</p>
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">11am–10pm</p>
-            </div>
-            <div>
-              <p className="text-2xl font-extrabold">Nigdi</p>
-              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Our café</p>
+
+            <div className="grid w-full grid-cols-3 gap-3 border-t border-secondary-foreground/15 pt-5 text-center">
+              <div>
+                <p className="text-2xl font-extrabold">Fresh</p>
+                <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Coffee & bites</p>
+              </div>
+              <div>
+                <p className="text-2xl font-extrabold">Daily</p>
+                <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">11am–10pm</p>
+              </div>
+              <div>
+                <p className="text-2xl font-extrabold">Nigdi</p>
+                <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.15em] opacity-50">Our café</p>
+              </div>
             </div>
           </div>
         </div>
