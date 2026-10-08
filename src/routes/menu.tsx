@@ -60,9 +60,15 @@ function Menu() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 pb-12">
+        <div className="grid gap-4 md:grid-cols-3">
+          {groups.map((group, index) => <a key={group.title} href={index === 0 ? "#coffee" : index === 1 ? "#burgers" : "#bites"} className="rounded-[1.5rem] border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary"><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary">0{index + 1}</p><h2 className="mt-3 text-2xl font-bold">{group.title}</h2><p className="mt-2 text-sm text-muted-foreground">{group.items.length} favourites</p></a>)}
+        </div>
+      </section>
       <section className="mx-auto max-w-6xl space-y-8 px-5 pb-24">
         {groups.map((group, index) => (
           <article
+            id={index === 0 ? "coffee" : index === 1 ? "burgers" : "bites"}
             key={group.title}
             className="grid overflow-hidden rounded-[2rem] border border-border bg-card md:grid-cols-[0.8fr_1.2fr]"
           >

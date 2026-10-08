@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
 import coffees from "@/assets/coffees.jpg";
 import bread from "@/assets/garlic-bread.jpg";
-import { MAPS, PHONE } from "@/components/site";
+import { INSTAGRAM as INSTAGRAM_URL, MAPS, PHONE } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,6 +60,56 @@ function Index() {
         </div>
       </section>
 
+
+      <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
+        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div><p className="eyebrow">Start here</p><h2 className="section-title">What are you <span className="serif-accent">craving?</span></h2></div>
+          <Link to="/menu" className="text-sm font-bold uppercase tracking-[0.15em] text-primary">Explore everything →</Link>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {[
+            ["Coffee", "Thick, chocolate or regular.", coffees],
+            ["Burgers", "Loaded and made for proper hunger.", hero],
+            ["Quick bites", "Cheesy things for the table.", bread],
+          ].map(([title, copy, image], i) => (
+            <Link to="/menu" key={title as string} className="group relative min-h-[360px] overflow-hidden rounded-[2rem] border border-border">
+              <img src={image as string} alt={title as string} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
+              <div className="absolute bottom-0 p-7 text-white">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">0{i + 1}</p>
+                <h3 className="mt-2 text-3xl font-bold">{title as string}</h3>
+                <p className="mt-2 text-sm text-white/65">{copy as string}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-secondary py-24 text-secondary-foreground md:py-32">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div><p className="eyebrow">Most loved</p><h2 className="section-title">The things people <span className="serif-accent">come back for.</span></h2></div>
+            <p className="max-w-xl text-sm leading-7 text-secondary-foreground/60 lg:justify-self-end">Start with the signatures, then stay for whatever catches your eye.</p>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {[
+              ["Thick Cold Coffee", "Creamy, chilled & our signature sip", coffees],
+              ["Special Chicken Burger", "A proper loaded favourite", hero],
+              ["Cheese Garlic Bread", "Golden, cheesy & made for sharing", bread],
+            ].map(([name, note, image], i) => (
+              <article key={name as string} className={i === 1 ? "md:translate-y-10" : ""}>
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
+                  <img src={image as string} alt={name as string} loading="lazy" className="h-full w-full object-cover transition duration-700 hover:scale-105" />
+                  <span className="absolute left-4 top-4 rounded-full bg-background/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.16em] backdrop-blur">Favourite</span>
+                </div>
+                <h3 className="mt-5 text-2xl font-bold">{name as string}</h3>
+                <p className="mt-1 text-sm text-secondary-foreground/55">{note as string}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-24 md:grid-cols-2 md:items-center">
         <img src={coffees} alt="Thick, chocolate and regular cold coffee" width={1024} height={1024} loading="lazy" className="rounded-[2rem] object-cover shadow-2xl shadow-black/10" />
         <div>
@@ -81,6 +131,21 @@ function Index() {
           <ul className="mt-6 space-y-3 font-display text-2xl">
             <li>Special Chicken Burger</li><li>Devil's Burger</li><li>Cheese Garlic Bread</li>
           </ul>
+        </div>
+      </section>
+
+
+      <section className="mx-auto max-w-7xl px-5 py-24 md:py-32">
+        <div className="grid gap-8 md:grid-cols-12">
+          <div className="rounded-[2rem] bg-primary p-8 text-primary-foreground md:col-span-5 md:p-10">
+            <p className="text-xs font-bold uppercase tracking-[0.2em]">Follow the café</p>
+            <h2 className="mt-5 text-5xl font-bold leading-[0.9]">See what's <span className="font-serif font-normal italic">brewing.</span></h2>
+            <p className="mt-5 text-sm leading-6 opacity-75">Food, coffee and little moments from Bun n Brew.</p>
+            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="mt-8 inline-block rounded-full bg-primary-foreground px-5 py-3 text-sm font-bold text-primary">Follow on Instagram →</a>
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:col-span-7">
+            {[coffees, hero, bread, coffees].map((image, i) => <img key={i} src={image} alt="Bun n Brew café moment" loading="lazy" className="aspect-square w-full rounded-[1.5rem] object-cover" />)}
+          </div>
         </div>
       </section>
 
