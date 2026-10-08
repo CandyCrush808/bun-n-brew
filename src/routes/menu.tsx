@@ -55,7 +55,7 @@ function Menu() {
             The <span className="font-serif font-normal italic text-primary">menu</span>
           </h1>
           <p className="max-w-md text-base leading-7 text-muted-foreground md:justify-self-end">
-            A short list of the things Bun n Brew is known for. Today's prices and the complete menu are available by phone or Instagram.
+            A focused list of the things Bun n Brew is known for. For current specials or availability, call us or check Instagram.
           </p>
         </div>
       </section>
