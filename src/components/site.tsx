@@ -30,7 +30,7 @@ export function Header() {
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
-          <Link to="/" className={navLink} activeProps={{ className: "text-foreground" }}>
+          <Link to="/" className={navLink} activeProps={{ className: `${navLink} text-foreground` }}>
             Home
           </Link>
           <Link to="/menu" className={navLink} activeProps={{ className: "text-foreground" }}>
