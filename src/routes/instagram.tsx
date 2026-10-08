@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Instagram as InstagramIcon, Play, Star } from "lucide-react";
+import { ArrowUpRight, Instagram as InstagramIcon, Play, Star } from "lucide-react";
 import coffees from "@/assets/coffees.jpg";
 import hero from "@/assets/hero.jpg";
 import bread from "@/assets/garlic-bread.jpg";
