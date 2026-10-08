@@ -74,21 +74,30 @@ export function Header() {
           className="border-t border-border px-5 py-4 md:hidden"
         >
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
-            {[
-              ["Home", "/"],
-              ["Menu", "/menu"],
-              ["Visit", "/visit"],
-            ].map(([label, to]) => (
-              <Link
-                key={to}
-                to={to}
-                onClick={closeMenu}
-                className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted"
-                activeProps={{ className: "rounded-2xl bg-muted px-4 py-3 font-semibold text-primary" }}
-              >
-                {label}
-              </Link>
-            ))}
+            <Link
+              to="/"
+              onClick={closeMenu}
+              className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted"
+              activeProps={{ className: "rounded-2xl bg-muted px-4 py-3 font-semibold text-primary" }}
+            >
+              Home
+            </Link>
+            <Link
+              to="/menu"
+              onClick={closeMenu}
+              className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted"
+              activeProps={{ className: "rounded-2xl bg-muted px-4 py-3 font-semibold text-primary" }}
+            >
+              Menu
+            </Link>
+            <Link
+              to="/visit"
+              onClick={closeMenu}
+              className="rounded-2xl px-4 py-3 font-medium transition-colors hover:bg-muted"
+              activeProps={{ className: "rounded-2xl bg-muted px-4 py-3 font-semibold text-primary" }}
+            >
+              Visit
+            </Link>
             <a
               href={INSTAGRAM}
               target="_blank"
