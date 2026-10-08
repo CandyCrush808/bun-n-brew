@@ -25,12 +25,12 @@ export const Route = createFileRoute("/instagram")({
 });
 
 const posts = [
-  { image: hero, title: "Loaded buns", note: "The burger break", rotate: "md:-rotate-3", position: "md:col-start-1 md:row-start-1" },
-  { image: coffees, title: "The brew", note: "Cold coffee weather", rotate: "md:rotate-2", position: "md:col-start-2 md:row-start-1 md:mt-16" },
-  { image: bread, title: "For the table", note: "Cheesy garlic bread", rotate: "md:-rotate-2", position: "md:col-start-3 md:row-start-1 md:mt-8" },
-  { image: coffees, title: "Coffee break", note: "Slow down a little", rotate: "md:rotate-3", position: "md:col-start-1 md:row-start-2 md:mt-8" },
-  { image: hero, title: "Burger mood", note: "Big bite energy", rotate: "md:-rotate-1", position: "md:col-start-2 md:row-start-2 md:-mt-6" },
-  { image: bread, title: "Something extra", note: "Made for sharing", rotate: "md:rotate-2", position: "md:col-start-3 md:row-start-2 md:mt-12" },
+  { image: hero, title: "Loaded buns", note: "The burger break", rotate: "md:-rotate-3" },
+  { image: coffees, title: "The brew", note: "Cold coffee weather", rotate: "md:rotate-2" },
+  { image: bread, title: "For the table", note: "Cheesy garlic bread", rotate: "md:-rotate-2" },
+  { image: coffees, title: "Coffee break", note: "Slow down a little", rotate: "md:rotate-3" },
+  { image: hero, title: "Burger mood", note: "Big bite energy", rotate: "md:-rotate-1" },
+  { image: bread, title: "Something extra", note: "Made for sharing", rotate: "md:rotate-2" },
 ];
 
 const cravings = [
@@ -145,7 +145,7 @@ function InstagramPage() {
           </a>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3 md:grid-rows-2 md:gap-x-10 md:gap-y-2">
+        <div className="grid gap-12 md:grid-cols-3 md:gap-x-10 md:gap-y-16">
           {posts.map((post, index) => (
             <a
               key={post.title + index}
@@ -153,7 +153,7 @@ function InstagramPage() {
               target="_blank"
               rel="noreferrer"
               aria-label={`Open Bun n Brew Instagram — ${post.title}`}
-              className={`group relative block ${post.position} ${post.rotate} transition duration-500 hover:z-20 md:hover:rotate-0 md:hover:scale-105`}
+              className={`group relative block ${post.rotate} transition duration-500 hover:z-20 md:hover:rotate-0 md:hover:scale-105`}
             >
               <div className="absolute -top-3 left-1/2 z-10 h-8 w-16 -translate-x-1/2 rotate-[-4deg] bg-primary/70 shadow-sm backdrop-blur-sm" />
               <div className="bg-[#f5efe5] p-3 pb-6 shadow-[0_18px_35px_rgba(0,0,0,0.18)] md:p-4 md:pb-7">
