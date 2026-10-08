@@ -69,3 +69,20 @@ function Visit() {
     </>
   );
 }
+
+      <section className="mx-auto max-w-6xl px-5 py-24 md:py-32">
+        <div className="grid gap-5 md:grid-cols-3">
+          {[
+            ["01", "Easy to find", "Near Akurdi Railway Station Road."],
+            ["02", "Open daily", "Drop in any day from 11am to 10pm."],
+            ["03", "Need help?", "Call before you head over."],
+          ].map(([n, title, copy]) => (
+            <div key={n} className="rounded-[2rem] border border-border bg-card p-7">
+              <span className="text-xs font-bold text-primary">{n}</span>
+              <h2 className="mt-6 text-2xl font-bold">{title}</h2>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
