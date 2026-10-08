@@ -56,10 +56,10 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/menu' | '/visit'
+  fullPaths: '/' | '/menu' | '/visit' | '/instagram'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/menu' | '/visit'
-  id: '__root__' | '/' | '/menu' | '/visit'
+  to: '/' | '/menu' | '/visit' | '/instagram'
+  id: '__root__' | '/' | '/menu' | '/visit' | '/instagram'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   MenuRoute: MenuRoute,
   VisitRoute: VisitRoute,
+  InstagramRoute: InstagramRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
