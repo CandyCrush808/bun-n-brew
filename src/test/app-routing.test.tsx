@@ -12,7 +12,7 @@ function createTestRouter() {
 }
 
 describe("App routing", () => {
-  it.each(["/", "/menu", "/visit"])("matches a page for %s", (path) => {
+  it.each(["/", "/menu", "/visit", "/instagram"])("matches a page for %s", (path) => {
     const router = createTestRouter();
     const matches = router.matchRoutes(path);
 
