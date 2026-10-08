@@ -93,7 +93,6 @@ function Menu() {
                 {group.items.map((item) => (
                   <li key={item} className="flex items-center justify-between gap-4 py-5">
                     <span className="font-display text-xl font-semibold md:text-2xl">{item}</span>
-                    <span className="text-xs uppercase tracking-[0.15em] text-muted-foreground">Call for price</span>
                   </li>
                 ))}
               </ul>
